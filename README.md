@@ -38,9 +38,9 @@ The scout drone sends this information along with the target location to drone m
 - Number of drones required
 - Proposed formation
 
-The mesh drones are dispatched from the hub and form suitable cover over the wildfire according to the proposed topology.%%%% The retardants are then released onto the fire's core. After the operation drones are returned to the hub. If the fire still persists, the drones are sent again. During this time scout drone watches over the wildfire and creates a reward function based on the retarding speed of the fire's core. This reward function is later fed into reinforcement learning model of drone for future iterations.
+The mesh drones are dispatched from the hub and form suitable cover over the wildfire according to the proposed topology. The retardants are then released onto the fire's core. After the operation drones are returned to the hub. If the fire still persists, the drones are sent again. During this time scout drone watches over the wildfire and creates a reward function based on the retarding speed of the fire's core. This reward function is later fed into reinforcement learning model of drone for future iterations.
 
-### Relief(future iteration):
+### Relief(future phase):
 - Human detection
 - Damage prediction
 - Damage effect prediction and relief work
@@ -48,22 +48,33 @@ The mesh drones are dispatched from the hub and form suitable cover over the wil
 ## Iterations:
 This is a constantly evolving system, which continues to learn from each failed and successful attempt. The results are fed back into scout drone, mesh drones and prediction models.
 
+## Matter at Hand
+- choosing topology creation algorithm
+
 ## Objective Overview:
 - To cluster fire prone areas and situate a drone array in the most affective spread circle for the listed areas.
   - Analysis of topography done through satellite imagery of the proposed forest cover.
-  - Clustering areas with dense forest cover using k-means clustering algorithm.
+  - Clustering areas with dense forest cover using fuzzy clustering algorithm.
 - To detect and localize wildfire's core.
   - Detection of fire and smoke as whole object by real-time detection.
   - Saliency detection using region of interest extraction (fire's core).
   - Prediction and extrapolation of fire spread pattern and marking of surrounding areas as high risk.
 - To optimize and manage an autonomous drone array for effective spraying of fire-retardant over forest fires suggesting varying physical factors.
   - To create autonomous pattern detection system to form a topology of drone network for the most efficient retardant spread.
-  - Refactoring reignition of latent peat
-  - Accounting in wind speed, direction, temperature, dryness, proximity to settlement.
+  - Refactoring reignition of latent peat (future iteration)
+  - Accounting in wind speed, direction, temperature, dryness, proximity to settlement for retardant discharge.
 
 ## Definitions:
 - The scout drone is defined by a singular drone (or small array) sent out to take images of the suspected fire prone areas at regular intervals.
 
 - The drone array is defined as a 2-dimensional (3-dimensional in experimental stages) hypothetical symmetrically-phased linear array, linking drones as nodes in 2-d spatial map structure. The path signifies the interconnections among nodes as symbolic data links specifically designed, in this case to bring about maximum efficiency in reward functions later defined.
 
-- The data links function as communication pathways among nodes to transfer sensory input and
+- The data links function as communication pathways among nodes to transfer sensory input and features for info flow.
+
+
+## Checklist
+- [x] Fire detection system
+- [x] Fuzzy clustering model
+- [x] RBF network (initialization and training)
+- [ ] Coupling clustering with network
+- [ ] Drone control systems
