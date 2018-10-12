@@ -1,5 +1,5 @@
 # Self-Contained Wildfire Prediction and Counteraction System 
-*A project by team O(N)Cube
+*A project by team O(N)Cube*
 
 **Team:** Utkarsh, Vedant and Shresth 
 
